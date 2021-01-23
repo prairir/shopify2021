@@ -6,4 +6,9 @@ class ImagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get index" do
+    get images_index_url
+    assert_response :success
+  end
+
 end

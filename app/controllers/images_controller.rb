@@ -1,17 +1,26 @@
 class ImagesController < ApplicationController
+  before_action :set_image_by_id, only: [:show, :destroy]
+  
+  # GET /images
+  # GET /images.json
   def index
     @images = Images.all
   end
 
+  # GET /images/1
+  # GET /images/1.json
   def show
   end
 
+  # GET /images/new
   def new
     @image = Image.new
   end
 
+
+  # POST /images
+  # POST /images.json
   def create
-    imagj
     @image = Image.new
   end
 
