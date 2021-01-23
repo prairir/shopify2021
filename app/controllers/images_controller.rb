@@ -14,7 +14,7 @@ class ImagesController < ApplicationController
 
   # GET /images/new
   def new
-    @image = Image.new
+    @image = Images.new
   end
 
 
