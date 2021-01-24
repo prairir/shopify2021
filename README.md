@@ -1,6 +1,6 @@
 # README
 
-This is my first rails project
+This is my first rails project and I built it in 3 days
 
 *this is still a work in progres*
 
