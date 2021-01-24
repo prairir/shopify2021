@@ -24,22 +24,21 @@ This is a basic image directory. You can
   In `<MAIN>/config/database.yml`
   edit 
   ```
+  development:
+    <<: *default
+    database: <development db name>
+    host: <development db url>
+    port: <development db port>
 
-development:
-  <<: *default
-  database: <development db name>
-  host: <development db url>
-  port: <development db port>
-  
   .
   .
   .
 
-test:
-  <<: *default
-  database: <testing db name>
-  host: <testing db url>
-  port: <testing db port>
+  test:
+    <<: *default
+    database: <testing db name>
+    host: <testing db url>
+    port: <testing db port>
   ```
   replace `<something>` to be what the variable asks, including the `<>`
 
