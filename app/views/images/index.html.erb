@@ -1,0 +1,10 @@
+<p>hi</p>
+
+<% @images.each do |image| %>
+
+    <h1><%= image.title %></h1>
+    <a href="<%= image_path(image.friendly_id) %>">
+        <img src="<%= url_for(image.data) %>"/>
+    </a>
+    <br/>
+<% end %>
