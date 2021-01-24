@@ -10,7 +10,6 @@ class ImagesController < ApplicationController
   # GET /images/1
   # GET /images/1.json
   def show
-    puts @image.data.attached?
   end
 
   # GET /images/new
@@ -46,7 +45,7 @@ class ImagesController < ApplicationController
 
     # Search by the id
     def set_image
-      @image = Image.friendly.find(params[:id])
+      @image = Image.friendly.find(params[:id]) rescue content_not_found
     end
 
     def image_params
