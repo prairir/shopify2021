@@ -33,6 +33,7 @@ class ImagesController < ApplicationController
     end
   end
 
+  # DELETE /images/:id(.:format)
   def destroy
     @image.destroy
     respond_to do |format|
