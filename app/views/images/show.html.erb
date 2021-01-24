@@ -1,3 +1,8 @@
 <h1><%= @image.title %></h1>
 
 <img src="<%= url_for(@image.data) %>"/>
+
+<br/>
+<%= link_to 'Back', root_path %>
+
+<%= link_to 'Delete', @image, method: :delete, data: { confirm: 'Are you sure?' } %>
