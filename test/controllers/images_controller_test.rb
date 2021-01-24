@@ -7,8 +7,17 @@ class ImagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get images_index_url
+    get root_url
     assert_response :success
+  end
+
+  test "should get show" do
+    @image = Image.new(title: 'test1')
+    get images_url(@image.friendly_id)
+  end
+
+  test "should destroy" do
+    destroy images_url(@image.friendly_id)
   end
 
 end
