@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
-  get '/images', to: redirect('/')
+  # get '/images', to: redirect('/')
 
-  get 'images/new'
+  # get 'images/new'
 
-  post 'images/new', to: 'images#create'
-  post 'images', to: 'images#create'
+  # post 'images/new', to: 'images#create'
+  # post 'images', to: 'images#create'
 
-  get 'images/:imgID', to: 'images#show'
+  # get 'images/:imgID', to: 'images#show'
+  # get 'images/show/:imgID', to: 'images#show'
 
-  delete 'images/:imgID', to: 'images#destroy'
+  # delete 'images/:imgID', to: 'images#destroy'
+  resources :images, only: [:index, :update, :new, :create, :show]
   root 'images#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   #get '*path' => redirect('/')

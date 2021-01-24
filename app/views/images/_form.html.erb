@@ -1,5 +1,5 @@
-<%= simple_form_for @image, url: images_new_url do |f| %>
+<%= simple_form_for :image, url: images_path, method: :post do |f| %>
     <%= f.input :title %>
-    <%= f.input :data %>
+    <%= f.file_field :data %>
     <%= f.button :submit, "Upload Image", class: "btn-primary" %>
 <% end %>
