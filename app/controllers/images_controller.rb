@@ -4,23 +4,25 @@ class ImagesController < ApplicationController
   # GET /images
   # GET /images.json
   def index
-    @images = Images.all
+    @images = Image.all
   end
 
   # GET /images/1
   # GET /images/1.json
   def show
+    puts @image.data.attached?
   end
 
   # GET /images/new
   def new
-    @image = Images.new
+    @image = Image.new
   end
 
   # POST /images
   # POST /images.json
   def create
-    @image = Images.new(image_params)
+    @image = Image.new(image_params)
+    byebug
 
     respond_to do |format|
       if @image.save
@@ -45,7 +47,7 @@ class ImagesController < ApplicationController
 
     # Search by the id
     def set_image
-      @image = Images.friendly.find(params[:id])
+      @image = Image.friendly.find(params[:id])
     end
 
     def image_params
