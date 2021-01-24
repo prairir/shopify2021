@@ -22,11 +22,10 @@ class ImagesController < ApplicationController
   # POST /images.json
   def create
     @image = Image.new(image_params)
-    byebug
 
     respond_to do |format|
       if @image.save
-        format.html { redirect_to images_path(@image.id), notice: 'Image was created successfully' }
+        format.html { redirect_to image_url(@image.friendly_id), notice: 'Image was created successfully' }
         format.json { render :show, status: :created, location: @image }
       else
         format.html { render :new }
